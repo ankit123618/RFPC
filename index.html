@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Road Fighter 3D</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ui">
+      <div id="score">Score: 0</div>
+      <div id="metaHud">
+        <div id="speed">000 KM/H</div>
+        <div id="status">READY</div>
+        <div id="checkpoint">CP 1/3</div>
+        <div id="nitroWrap">
+          <span>NITRO</span>
+          <div id="nitroBar"><div id="nitroFill"></div></div>
+        </div>
+      </div>
+      <div id="startScreen">
+        <div class="panel">
+          <p class="eyebrow">ZIPSY HIGHWAY PROTOTYPE</p>
+          <h1>Arcade Racing Demo</h1>
+          <p class="bodyCopy">Arrow keys steer. `W` or Up boosts. `S` or Down brakes. `P` pauses.</p>
+          <button id="startButton" type="button">Start Race</button>
+        </div>
+      </div>
+      <div id="gameOver" style="display: none;">
+        <h1>Game Over</h1>
+        <p id="gameOverCopy"></p>
+        <button type="button" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
