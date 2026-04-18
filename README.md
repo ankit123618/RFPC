@@ -1,6 +1,21 @@
 # RFPC
 
+## V1.0
+
+## About 
+
 `RFPC` is a 3D arcade racing prototype built with `Three.js`, bundled with `Vite`, and packaged for desktop with `Electron`.
+
+![RFPC demo](assets/media/demo.gif)
+
+### Screenshots
+
+![RFPC screenshot 1](assets/media/preview1.png)
+![RFPC screenshot 2](assets/media/preview2.png)
+![RFPC screenshot 3](assets/media/preview3.png)
+![RFPC screenshot 4](assets/media/preview4.png)
+
+
 
 The current game includes:
 - a playable 3D racing scene
