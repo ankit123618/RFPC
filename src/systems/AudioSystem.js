@@ -7,6 +7,7 @@ export function createAudioSystem(camera) {
   const engineSound = new THREE.Audio(listener);
   const crashSound = new THREE.Audio(listener);
   const audioLoader = new THREE.AudioLoader();
+  let paused = false;
 
   const engineSoundUrl = new URL('../../assets/sounds/engine.mp3', import.meta.url).href;
   const crashSoundUrl = new URL('../../assets/sounds/crash.mp3', import.meta.url).href;
@@ -24,7 +25,7 @@ export function createAudioSystem(camera) {
   });
 
   const startEngine = () => {
-    if (engineSound.buffer && !engineSound.isPlaying) {
+    if (!paused && engineSound.buffer && !engineSound.isPlaying) {
       engineSound.play();
     }
   };
@@ -39,7 +40,25 @@ export function createAudioSystem(camera) {
         engineSound.setPlaybackRate(rate);
       }
     },
+    setPaused(nextPaused) {
+      paused = nextPaused;
+
+      if (paused) {
+        if (engineSound.isPlaying) {
+          engineSound.stop();
+        }
+
+        if (crashSound.isPlaying) {
+          crashSound.stop();
+        }
+
+        return;
+      }
+
+      startEngine();
+    },
     reset() {
+      paused = false;
       if (crashSound.isPlaying) {
         crashSound.stop();
       }

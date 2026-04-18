@@ -1,6 +1,6 @@
-# RoadFighterPC
+# RFPC
 
-`RoadFighterPC` is a 3D arcade racing prototype built with `Three.js`, bundled with `Vite`, and packaged for desktop with `Electron`.
+`RFPC` is a 3D arcade racing prototype built with `Three.js`, bundled with `Vite`, and packaged for desktop with `Electron`.
 
 The current game includes:
 - a playable 3D racing scene
@@ -92,7 +92,7 @@ The loader paths are defined in `src/assets/AssetCatalog.js` and `src/assets/Mod
 ## Directory Structure
 
 ```text
-RoadFighterPC/
+RFPC/
 ├── assets/
 │   ├── models/             # Optional imported .glb assets
 │   └── sounds/             # Engine and crash audio

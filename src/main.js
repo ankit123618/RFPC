@@ -132,6 +132,7 @@ function animate() {
 
   if (paused !== input.pause) {
     paused = input.pause;
+    audio.setPaused(paused);
     statusEl.innerText = paused ? 'PAUSED' : gameStarted ? 'RACING' : GAME_CONFIG.introMessage;
   }
 
