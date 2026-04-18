@@ -13,8 +13,8 @@
     </td>
     <td width="42%" valign="top">
       <img src="assets/media/preview1.png" alt="RFPC screenshot 1" />
-      <img src="assets/media/preview2.png" alt="RFPC screenshot 2" />
-      <img src="assets/media/preview3.png" alt="RFPC screenshot 3" />
+      <!-- <img src="assets/media/preview2.png" alt="RFPC screenshot 2" /> -->
+      <!-- <img src="assets/media/preview3.png" alt="RFPC screenshot 3" /> -->
       <img src="assets/media/preview4.png" alt="RFPC screenshot 4" />
     </td>
   </tr>
