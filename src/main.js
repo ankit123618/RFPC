@@ -71,6 +71,11 @@ function handleResize() {
 
 window.addEventListener('resize', handleResize);
 startButtonEl.addEventListener('click', startRace);
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && !gameStarted) {
+    startRace();
+  }
+});
 
 async function spawnEnemy() {
   if (gameOver) {
@@ -90,6 +95,10 @@ async function spawnEnemy() {
 }
 
 function startRace() {
+  if (gameStarted) {
+    return;
+  }
+
   gameStarted = true;
   paused = false;
   startScreenEl.style.display = 'none';
@@ -125,10 +134,6 @@ window.restartGame = restartGame;
 function animate() {
   requestAnimationFrame(animate);
   const delta = Math.min(clock.getDelta(), 0.05);
-
-  if (!gameStarted && input.start) {
-    startRace();
-  }
 
   if (paused !== input.pause) {
     paused = input.pause;

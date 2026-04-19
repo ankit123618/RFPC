@@ -24,13 +24,17 @@ export function createAudioSystem(camera) {
     crashSound.setVolume(1);
   });
 
+  const ensureReady = async () => {
+    if (listener.context.state === 'suspended') {
+      await listener.context.resume();
+    }
+  };
+
   const startEngine = () => {
     if (!paused && engineSound.buffer && !engineSound.isPlaying) {
       engineSound.play();
     }
   };
-
-  window.addEventListener('click', startEngine, { once: false });
 
   return {
     crashSound,
@@ -57,11 +61,12 @@ export function createAudioSystem(camera) {
 
       startEngine();
     },
-    reset() {
+    async reset() {
       paused = false;
       if (crashSound.isPlaying) {
         crashSound.stop();
       }
+      await ensureReady();
       startEngine();
     },
     stopEngine() {

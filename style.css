@@ -132,6 +132,39 @@ canvas {
   margin: 0 0 18px;
 }
 
+.metaCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 231, 130, 0.35);
+  border-radius: 12px;
+  margin-top: 18px;
+  padding: 12px 14px;
+}
+
+.metaLabel {
+  color: #c9d8ea;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.metaValue {
+  color: #fff9df;
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+.metaCard a {
+  color: #ffe77f;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.metaCard a:hover {
+  text-decoration: underline;
+}
+
 #gameOverCopy {
   color: #eef4ff;
   line-height: 1.5;

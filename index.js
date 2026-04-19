@@ -1,5 +1,29 @@
-const { app, BrowserWindow, ipcMain } = require('electron/main')
+const { app, BrowserWindow, ipcMain, Menu, shell } = require('electron/main')
 const path = require('node:path')
+
+const REPO_URL = 'https://github.com/ankit123618/RoadFighterPC'
+const DOCS_URL = `${REPO_URL}#readme`
+const LICENSE_URL = `${REPO_URL}/blob/main/LICENSE`
+
+const createAppMenu = () => {
+    const template = [
+        {
+            label: 'Help',
+            submenu: [
+                {
+                    label: 'Documentation',
+                    click: () => shell.openExternal(DOCS_URL)
+                },
+                {
+                    label: 'License',
+                    click: () => shell.openExternal(LICENSE_URL)
+                }
+            ]
+        }
+    ]
+
+    Menu.setApplicationMenu(Menu.buildFromTemplate(template))
+}
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -15,6 +39,7 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
     ipcMain.handle('ping', () => 'pong')
+    createAppMenu()
     createWindow()
 })
 
